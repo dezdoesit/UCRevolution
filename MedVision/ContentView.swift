@@ -10,6 +10,7 @@ import RealityKit
 import RealityKitContent
 
 struct ContentView: View {
+    @ObservedObject var Trial = ClinicalViewModel()
 
     var body: some View {
         VStack {
