@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0DB60A342D73799400EA0A05 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 0DB60A332D73799400EA0A05 /* RealityKitContent */; };
-		3A0E77A12D737B5B0093050A /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0E77972D737B5B0093050A /* AppModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0DB60A2E2D73799400EA0A05 /* MedVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB60A322D73799400EA0A05 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
-		3A0E77972D737B5B0093050A /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -56,7 +54,6 @@
 				0DB60A302D73799400EA0A05 /* MedVision */,
 				0DB60A312D73799400EA0A05 /* Packages */,
 				0DB60A2F2D73799400EA0A05 /* Products */,
-				3A0E77972D737B5B0093050A /* AppModel.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,7 +148,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A0E77A12D737B5B0093050A /* AppModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
