@@ -11,4 +11,6 @@ public class DetailViewModel: ObservableObject {
     var contactName: String = ""
     var phoneNumber: String = ""
     var email: String = ""
+    
+    
 }

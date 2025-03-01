@@ -4,7 +4,7 @@ import RealityKitContent
 
 struct ContentView: View {
     @Environment(\.openWindow) private var openWindow
-    @ObservedObject var Trial = ClinicalViewModel()
+    @ObservedObject var Trial: ClinicalViewModel
     @EnvironmentObject var detailVM: DetailViewModel
 
     // Define the grid layout
@@ -28,7 +28,7 @@ struct ContentView: View {
                             )
                             .padding()
                             .onTapGesture {
-                                detailVM.contactName = trial.protocolSection.contactsLocationsModule.centralContacts[0].first!
+                                fillData(trial: trial)
                                 openWindow(id: "DetailView")
                             }
                     }
@@ -36,13 +36,21 @@ struct ContentView: View {
                 .padding(.top, 10)
                 .padding(.bottom, 50)
             }
-            Button(action: {detailVM.contactName = "John"}, label: {Text("EDIT VM")})
         }
         .padding()
+    }
+    func fillData(trial: Study){
+        detailVM.description =
+            trial.protocolSection.descriptionModule.detailedDescription ?? "No Description"
+        detailVM.contactName = trial.protocolSection.contactsLocationsModule.centralContacts?[0].name ?? "No Name"
+        detailVM.phoneNumber =
+            trial.protocolSection.contactsLocationsModule.centralContacts?[0].phone ?? "No Phone Number"
+        detailVM.email =
+            trial.protocolSection.contactsLocationsModule.centralContacts?[0].email ?? "No Email"
     }
 }
 
 #Preview(windowStyle: .automatic) {
-    ContentView()
+    ContentView(Trial: ClinicalViewModel())
         .environment(AppModel())
 }
