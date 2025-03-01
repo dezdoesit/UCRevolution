@@ -4,16 +4,18 @@ struct ClinicalTrial: Codable {
     let studies: [Study]
 
 }
-struct Study: Codable {
+struct Study: Codable{
     let protocolSection: ProtocolSection
-
 }
 struct ProtocolSection: Codable {
+    let identificationModule: IdentificationModule
     let descriptionModule: DescriptionModule
     let eligibilityModule: EligibilityModule
     let contactsLocationsModule: ContactsLocationsModule
 }
-
+struct IdentificationModule: Codable{
+    let nctId: String
+}
     
 
 

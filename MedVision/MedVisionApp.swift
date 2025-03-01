@@ -9,13 +9,14 @@ import SwiftUI
 
 @main
 struct MedVisionApp: App {
-
     @State private var appModel = AppModel()
+    @StateObject var DetailVM = DetailViewModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(appModel)
+                .environmentObject(DetailVM)
         }
 
         ImmersiveSpace(id: appModel.immersiveSpaceID) {
@@ -29,5 +30,9 @@ struct MedVisionApp: App {
                 }
         }
         .immersionStyle(selection: .constant(.full), in: .full)
+        
+        WindowGroup(id: "DetailView"){
+            TrialDetailView().environmentObject(DetailVM)
+        }
     }
 }

@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct TrialDetailView: View {
+    @EnvironmentObject var detailVM: DetailViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(detailVM.contactName)
     }
 }
 
 #Preview {
-    TrialDetailView()
+    TrialDetailView().environmentObject(DetailViewModel())
 }
